@@ -21,3 +21,13 @@
     
     to {opacity: 0;}
 }
+
+.fadeIn{
+   animation: fadeIn; 
+   animation-duration: 1s;
+}
+
+.fadeOut {
+    animation: fadeOut;
+    animation-duration: 1s;
+}
