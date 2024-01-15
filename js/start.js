@@ -1,6 +1,6 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
-
+//답변 추가 시킬 때
 function addAnswer(answerText, qIdx){
     var a = document.querySelector('.answerBox');
     var answer = document.createElement('button');
@@ -28,7 +28,7 @@ function addAnswer(answerText, qIdx){
         },450)
     }, false);
 }
-
+//다음으로 넘길때
 function goNext(qIdx) {
     var q = document.querySelector('.qBox');
     q.innerHTML = qnaList[qIdx].q;
