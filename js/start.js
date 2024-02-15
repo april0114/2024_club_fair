@@ -35,6 +35,7 @@ function goNext(qIdx) {
     for (let i in qnaList[qIdx].a){
         addAnswer(qnaList[qIdx].a[i].answer, qIdx); // qIdx를 전달하도록 수정
     }
+    var status = document.querySelector
 }
 
 function begin() {
