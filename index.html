@@ -14,35 +14,51 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/qna.css">
     <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href ="./css/result.css">
 </head>
 
 <body>
     <div class="container">
       <section id="main" class="mx-auto my-5 py-5 px-3">
-        <h1>십이간지로 알아보는 연애유형</h1>
+        <h1>동아리 유형 테스트</h1>
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
           <img src="./img/main.png" alt="mainImage" class="img-fluid">
         </div>
         <p>
-          나만의 MBTI 사이트입니다! <br>
-          아래 시작하기 버튼을 눌러 시작해 주십시오.
+          동아리 유형 테스트로 <br>
+          나에게 맞는 동아리를 찾아보기
         </p>
         <button type="button" class="btn btn-outline-danger mt-3" onclick="js:begin()">시작하기</button>
       </section>
+      <!--질문 섹션-->
       <section id="qna">
+        
+        <div class="qBox my-5 py-3 mx-auto">
+  
+        </div>
+        <!--답변-->
+        <div class="answerBox">
+  
+        </div>
+        <!--상태바 구현-->
         <div class="status mx-auto mt-5">
           <div class="statusBar">
           </div>
         </div>
-        <div class="qBox my-5 py-3 mx-auto">
-  
-        </div>
-        <div class="answerBox">
-  
-        </div>
       </section>
+      <!--결과 섹션-->
       <section id="result">
-        
+        <h1>두구두구 추천하는 동아리는!</h1>
+        <div class="resultname">
+
+        </div>
+        <div id="resultImg"col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+        </div>
+        <div class ="resultDesc">
+
+        </div>
+        <button type="button">공유하기</button>
+
       </section>
       <script src="./js/data.js" charset="utf-8"></script>
       <script src="./js/start.js" charset="utf-8"></script>
