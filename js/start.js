@@ -8,34 +8,29 @@ const endPoint = 8;
 const select = [0,0,0,0,0,0,0,0];
 
 function calResult(){
-
-//value가 가장 높은 값을 결과값을불러와주기 => 정렬 먼저
-var result = select.indexOf(Math.max(...select));
-return result;
-
-
-
+  console.log(select);
+  var result = select.indexOf(Math.max(...select));
+  return result;
 }
-  for (let i =0; i<endPoint; i++){
-    //target 안에 질문 i 번째의 선택 정답 변수를 넣어줌
-    var target = qnaList[i].a[select[i]]
-    //사용자가 지정해둔 type에 대해 반복문이 돎
-    for (let j= 0; j< target.type.length; j++){
-      //k는 pointarray를 반복하게 됨 type에 담겨 있는 값과, point array의 이름이 일치하면 값을 증가
-      for (let k=0; k<pointArray.length; k++){
-        if(target.type[j] === pointArray[k].name ){
-          pointArray[k].value += 1;
-        }
-      }
-    }
 
-  }
+function setResult(){
+  let point = calResult();
+  const resultName = document.querySelector('.resultname');
+  resultName.innerHTML = infoList[point].name;
 
+  var resultImg = document.createElement('img');
+  const imgDiv = document.querySelector('#resultImg');
+  var imgURL = 'img/image-' + point + '.jpg';
+  resultImg.src = imgURL;
+  resultImg.alt = point;
+  resultImg.classList.add('img-fluid');
+  imgDiv.appendChild(resultImg);
 
+  const resultDesc = document.querySelector('.resultDesc');
+  resultDesc.innerHTML = infoList[point].desc;
+}
 
-
-//qna가 꺼지고 result가 켜져야함
-function goResult() {
+function goResult(){
   qna.style.WebkitAnimation = "fadeOut 1s";
   qna.style.animation = "fadeOut 1s";
   setTimeout(() => {
@@ -44,12 +39,11 @@ function goResult() {
     setTimeout(() => {
       qna.style.display = "none";
       result.style.display = "block"
-    }, 450)
-  })
-  console.log(select);
+    }, 450)})
+    setResult();
 }
 
-function addAnswer(answerText, qIdx, idx) {
+function addAnswer(answerText, qIdx, idx){
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
   answer.classList.add('answerList');
@@ -61,45 +55,43 @@ function addAnswer(answerText, qIdx, idx) {
   a.appendChild(answer);
   answer.innerHTML = answerText;
 
-  answer.addEventListener("click", function () {
+  answer.addEventListener("click", function(){
     var children = document.querySelectorAll('.answerList');
-    for (let i = 0; i < children.length; i++) {
+    for(let i = 0; i < children.length; i++){
       children[i].disabled = true;
       children[i].style.WebkitAnimation = "fadeOut 0.5s";
       children[i].style.animation = "fadeOut 0.5s";
     }
     setTimeout(() => {
-      //사용자가 몇번째 질문에서 몇번째 버튼을 눌렀는지 배열에 넣어주기
       var target = qnaList[qIdx].a[idx].type;
-    //사용자가 지정해둔 type에 대해 반복문이 돎
-    for (let j= 0; j< target.type.length; j++){
-    
-      select[type[i]] += idx;
-    }
-      for (let i = 0; i < children.length; i++) {
+      for(let i = 0; i < target.length; i++){
+        select[target[i]] += 1;
+      }
+
+      for(let i = 0; i < children.length; i++){
         children[i].style.display = 'none';
       }
       goNext(++qIdx);
-    }, 450)
+    },450)
   }, false);
 }
 
-function goNext(qIdx) {
-  if (qIdx === endPoint) {
+function goNext(qIdx){
+  if(qIdx === endPoint){
     goResult();
     return;
   }
+
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
-  for (let i in qnaList[qIdx].a) {
-    //몇번째 버튼을 클릭했는지 알 수 있게 하기 위해 i추가
+  for(let i in qnaList[qIdx].a){
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
   var status = document.querySelector('.statusBar');
-  status.style.width = (100 / endPoint) * (qIdx + 1) + '%';
+  status.style.width = (100/endPoint) * (qIdx+1) + '%';
 }
 
-function begin() {
+function begin(){
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
   setTimeout(() => {
