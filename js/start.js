@@ -12,7 +12,7 @@ function calResult(){
   var result = select.indexOf(Math.max(...select));
   return result;
 }
-
+//결과창
 function setResult(){
   let point = calResult();
   const resultName = document.querySelector('.resultname');
@@ -30,6 +30,7 @@ function setResult(){
   resultDesc.innerHTML = infoList[point].desc;
 }
 
+//결과 창 가기 위한 애니메이션
 function goResult(){
   qna.style.WebkitAnimation = "fadeOut 1s";
   qna.style.animation = "fadeOut 1s";
@@ -42,7 +43,7 @@ function goResult(){
     }, 450)})
     setResult();
 }
-
+//답변 선택
 function addAnswer(answerText, qIdx, idx){
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
@@ -83,7 +84,16 @@ function goNext(qIdx){
   }
 
   var q = document.querySelector('.qBox');
+  var b = document.querySelector('.iBox');
   q.innerHTML = qnaList[qIdx].q;
+
+  var questionImage = document.createElement('img');
+var imgURL = 'img/question-' + qIdx + '.jpg';
+questionImage.src = imgURL;
+questionImage.alt = 'Question Image ' + qIdx;
+// 이미지를 qBox 아래에 추가
+q.appendChild(questionImage);
+
   for(let i in qnaList[qIdx].a){
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
@@ -91,6 +101,7 @@ function goNext(qIdx){
   status.style.width = (100/endPoint) * (qIdx+1) + '%';
 }
 
+//시작할때 애니메이션
 function begin(){
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
