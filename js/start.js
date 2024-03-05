@@ -53,14 +53,17 @@ function addImage(qIdx) {
   b.innerHTML = '';
 
   var questionImage = document.createElement('img');
-  questionImage.classList.add('my-3');
   questionImage.classList.add('col-lg-6');
   questionImage.classList.add('col-md-8');
   questionImage.classList.add('col-sm-10');
-  questionImage.classList.add('col-12');
+  questionImage.classList.add('img-fluid');
   questionImage.classList.add('mx-auto');
+  questionImage.classList.add('d-block');
   questionImage.classList.add('fadeIn');
 
+  //이미지 크기 조정
+  questionImage.style.width = '65%';   // 이미지 너비를 80%로 설정
+questionImage.style.height = 'auto';  // 높이를 자동으로 조절하여 가로세로 비율을 유지
   var imgURL = 'img/question-' + qIdx + '.jpg';
   questionImage.src = imgURL;
   questionImage.alt = 'Question Image ' + qIdx;
