@@ -41,8 +41,36 @@ function goResult(){
       qna.style.display = "none";
       result.style.display = "block"
     }, 450)})
+    
     setResult();
 }
+
+//질문지에 이미지 추가하기 위해서
+function addImage(qIdx) {
+  var b = document.querySelector('#Ibox');
+  
+  // 이미지를 초기화합니다.
+  b.innerHTML = '';
+
+  var questionImage = document.createElement('img');
+  questionImage.classList.add('my-3');
+  questionImage.classList.add('col-lg-6');
+  questionImage.classList.add('col-md-8');
+  questionImage.classList.add('col-sm-10');
+  questionImage.classList.add('col-12');
+  questionImage.classList.add('mx-auto');
+  questionImage.classList.add('fadeIn');
+
+  var imgURL = 'img/question-' + qIdx + '.jpg';
+  questionImage.src = imgURL;
+  questionImage.alt = 'Question Image ' + qIdx;
+
+  // 이미지를 qBox 아래에 추가합니다.
+  b.appendChild(questionImage);
+}
+
+
+
 //답변 선택
 function addAnswer(answerText, qIdx, idx){
   var a = document.querySelector('.answerBox');
@@ -77,29 +105,43 @@ function addAnswer(answerText, qIdx, idx){
   }, false);
 }
 
-function goNext(qIdx){
-  if(qIdx === endPoint){
+function goNext(qIdx) {
+  if (qIdx === endPoint) {
     goResult();
     return;
   }
 
-  var q = document.querySelector('.qBox');
-  var b = document.querySelector('.iBox');
-  q.innerHTML = qnaList[qIdx].q;
+  var qBox = document.querySelector('.qBox');
+  var iBox = document.querySelector('.Ibox');
 
-  var questionImage = document.createElement('img');
-var imgURL = 'img/question-' + qIdx + '.jpg';
-questionImage.src = imgURL;
-questionImage.alt = 'Question Image ' + qIdx;
-// 이미지를 qBox 아래에 추가
-q.appendChild(questionImage);
+  // 클래스가 있는지 확인하고 없으면 추가
+  if (!qBox) {
+    qBox = document.createElement('div');
+    qBox.classList.add('qBox');
+    document.body.appendChild(qBox);
+  }
 
-  for(let i in qnaList[qIdx].a){
+  if (!iBox) {
+    iBox = document.createElement('div');
+    iBox.classList.add('Ibox');
+    document.body.appendChild(iBox);
+  }
+
+  qBox.innerHTML = qnaList[qIdx].q;
+  iBox.innerHTML = ''; // 이미지를 초기화
+
+  addImage(qIdx); // 이미지 추가
+
+  for (let i in qnaList[qIdx].a) {
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
+
   var status = document.querySelector('.statusBar');
-  status.style.width = (100/endPoint) * (qIdx+1) + '%';
+  status.style.width = (100 / endPoint) * (qIdx + 1) + '%';
 }
+
+
+
 
 //시작할때 애니메이션
 function begin(){
