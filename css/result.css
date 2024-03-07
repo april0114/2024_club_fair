@@ -13,7 +13,7 @@
 }
 
 .resultname{
-    font-size: 20px;;
+    font-size: 20px;
 }
 
 .kakao{
@@ -26,5 +26,4 @@
 
 .kakao:hover, .kakao:focus{
     background-color: whitesmoke;
-    color: #FEE500;
 }
