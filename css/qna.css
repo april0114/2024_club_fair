@@ -3,26 +3,24 @@
   }
   
   .qBox {
-    background-color: whitesmoke;
     text-align: center;
-    border-radius: 20px;
-    font-size: 24px;
-    width: 80%
+    font-size: 20px;
+    width: 100%
   }
   
 
   .answerList {
-    background-color: whitesmoke;
+    border-color: #CDCDCD;
+    border-width: 0.5px;
     border-radius: 20px;
     display: block;
     width: 80%;
-    border: 0px;
     font-size: 20px;
+    background-color: transparent;
   }
   
   .answerList:hover, .answerList:focus {
     background-color: FFF5C0;
-    color: yellow;
   }
   
   .status {
