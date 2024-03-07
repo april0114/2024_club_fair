@@ -84,6 +84,7 @@ function addAnswer(answerText, qIdx, idx){
   answer.classList.add('mx-auto');
   answer.classList.add('fadeIn');
 
+
   a.appendChild(answer);
   answer.innerHTML = answerText;
 
