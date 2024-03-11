@@ -5,7 +5,9 @@
   .qBox {
     text-align: center;
     font-size: 20px;
-    width: 100%
+    width: 100%;
+    font-weight: bold;
+    
   }
   
 
@@ -15,7 +17,7 @@
     border-radius: 20px;
     display: block;
     width: 80%;
-    font-size: 18px;
+    font-size: 15px;
     background-color: transparent;
   }
   
