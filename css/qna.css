@@ -1,5 +1,10 @@
 #qna {
     display: none;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+
+
   }
   
   .qBox {
@@ -9,16 +14,19 @@
     font-weight: bold;
     
   }
-  
+  .answerBox{
+    margin-top: 20px;
+  }
 
   .answerList {
     border-color: #CDCDCD;
     border-width: 0.5px;
     border-radius: 20px;
     display: block;
-    width: 80%;
+    width: 95%;
     font-size: 15px;
     background-color: transparent;
+
   }
   
   .answerList:hover, .answerList:focus {
@@ -27,7 +35,7 @@
   
   .status {
     height: 20px;
-    width: 80%;
+    width: 95%;
     background-color: white;
     border-radius: 20px;
   }
