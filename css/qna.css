@@ -1,5 +1,6 @@
 #qna {
     display: none;
+    
   }
   
   .qBox {
@@ -32,13 +33,15 @@
     width: 80%;
     background-color: white;
     border-radius: 20px;
+    border-width: 3px;
+    border-color: black;
   }
   
   .statusBar {
     height: 100%;
     border-radius: 20px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+52,ff5c5c+100;Red+3D+%231 */
     background: whitesmoke;
+
     /* Old browsers */
     background: -moz-linear-gradient(top, #FFF5C0 0%, #FFF5C0 52%, #FFF5C0 100%);
     /* FF3.6-15 */

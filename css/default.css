@@ -1,6 +1,12 @@
 body{
     background-color: #fff;
+
 }
 *{
 font-family: 'SUIT', sans-serif;
 }
+
+section {
+        height: 100vh;
+      }  
+  

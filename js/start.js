@@ -7,6 +7,16 @@ const endPoint = 8;
 //사용자가 어떤 선택을 했는지 저장하는 배열
 const select = [0,0,0,0,0,0,0,0];
 
+function setQnaSectionWidth(widthPercentage) {
+  var qnaSection = document.getElementById("qna");
+  if (qnaSection) {
+    qnaSection.style.width = widthPercentage + "%";
+  }
+}
+//로딩시 100프로 사이즈
+setQnaSectionWidth(100);
+
+
 function calResult(){
   console.log(select);
   var result = select.indexOf(Math.max(...select));
