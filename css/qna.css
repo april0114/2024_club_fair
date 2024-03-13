@@ -1,38 +1,26 @@
 #qna {
     display: none;
-    border-radius: 20px;
-    width: 100%;
-    text-align: center;
-
-
   }
   
   .qBox {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     width: 100%;
     font-weight: 500;
     
   }
-  .answerBox{
-    margin-top: 20px;
-  }
-
+  
+  
   .answerList {
     border-color: #CDCDCD;
     border-width: 0.5px;
     border-radius: 20px;
     display: block;
-    width: 95%;
-    font-size: 20px;
+    width: 80%;
+    font-size: 15px;
     background-color: transparent;
-<<<<<<< HEAD
     text-decoration: none; /* 링크의 밑줄 제거 */  
     color: inherit;
-=======
-    color: inherit;
-
->>>>>>> 9f6d3c9befec7916e523c6000babc52dd928d2b0
   }
   
   .answerList:hover, .answerList:focus {
@@ -40,8 +28,8 @@
   }
   
   .status {
-    height: 20px;
-    width: 95%;
+    height: 15px;
+    width: 80%;
     background-color: white;
     border-radius: 20px;
   }
