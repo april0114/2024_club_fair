@@ -2,6 +2,15 @@
 <html lang="ko">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZXSBYDYN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LZXSBYDYN4');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name ="author" content="@bubblegum_0114, @min_nnn.nnn">
@@ -42,18 +51,20 @@
         <button type="button" class="btn btn-outline-danger mt-3" onclick="js:begin()">시작하기</button>
       </section>
       <!--질문 섹션-->
-      <section id="qna">
+      <section id="qna" class="mx-auto my-5 px-3">
         <div class="qBox my-3 py-3 mx-auto">
-          <!-- 질문 이미지 섹션 -->
           
         </div>
-        <div id="Ibox">
-          <!-- 여기에 이미지 등 추가 가능 -->
+        <div id="Ibox" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+          <!--질문 이미지 섹션-->
         </div>
         <!-- 답변 -->
         <div class="answerBox">
           <!-- 여기에 답변 추가됨 -->
         </div>
+        <div class="status mx-auto mt-5">
+          <div class="statusBar">
+          </div>
       </section>
       
       <!--결과 섹션-->

@@ -4,9 +4,11 @@
     text-align: center;
     border-radius: 20px;
     font-weight: bold;
+
 }
 p{
     font-size: 15px;
+<<<<<<< HEAD
     margin-top: 20px; 
 
 }
@@ -16,4 +18,10 @@ h1{
 
 #main img {
     margin-bottom: 20px; 
+=======
+}
+#main img {
+    margin-bottom: 20px; /* 이미지 아래 간격 설정 */
+    margin-top: 20px;
+>>>>>>> 9f6d3c9befec7916e523c6000babc52dd928d2b0
 }
