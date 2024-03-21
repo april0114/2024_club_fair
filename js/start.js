@@ -6,6 +6,8 @@ const reuslt = document.querySelector("result")
 const endPoint = 8;
 //사용자가 어떤 선택을 했는지 저장하는 배열
 const select = [0,0,0,0,0,0,0,0];
+// 다시 시작 버튼
+const restartButton = document.getElementById('restartButton');
 
 function setQnaSectionWidth(widthPercentage) {
   var qnaSection = document.getElementById("qna");
@@ -30,14 +32,30 @@ function setResult(){
 
   var resultImg = document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
-  var imgURL = 'img/image-' + point + '.jpg';
+  var imgURL = 'img/result/image-' + point + '.jpg';
   resultImg.src = imgURL;
   resultImg.alt = point;
   resultImg.classList.add('img-fluid');
   imgDiv.appendChild(resultImg);
+  
 
   const resultDesc = document.querySelector('.resultDesc');
   resultDesc.innerHTML = infoList[point].desc;
+}
+
+function resultaddImage(qIdx) {
+  var b = document.querySelector('#');
+  b.innerHTML = ''; // 이미지를 초기화
+
+  var questionImage = document.createElement('img');
+
+  var imgURL = 'img/question-' + qIdx + '.jpg';
+  questionImage.src = imgURL;
+  questionImage.alt = 'Question Image ' + qIdx;
+  questionImage.classList.add('img-fluid');
+
+
+  b.appendChild(questionImage);
 }
 
 //결과 창 가기 위한 애니메이션
@@ -66,6 +84,8 @@ function addImage(qIdx) {
   questionImage.src = imgURL;
   questionImage.alt = 'Question Image ' + qIdx;
   questionImage.classList.add('img-fluid');
+  questionImage.id = "Iimg";
+  questionImage.style.padding = "0";
 
   b.appendChild(questionImage);
 }
@@ -158,4 +178,13 @@ function begin(){
     let qIdx = 0;
     goNext(qIdx);
   }, 450);
+}
+
+//다시 시작
+restartButton.addEventListener('click', function() {
+  restartPage(); // 페이지 다시 시작 함수 호출
+});
+
+function restartPage() {
+  window.location.reload(); // 페이지 새로고침하여 다시 시작
 }

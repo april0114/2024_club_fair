@@ -6,11 +6,20 @@
   .qBox {
     text-align: center;
     font-size: 20px;
-    width: 100%;
+    width: 80%;
     font-weight: 500;
+  
+
     
   }
-  
+
+  #Iimg {
+    object-fit: cover;
+    object-position: center top; /* 이미지를 상단에 정렬합니다. */
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
   
   .answerList {
     border-color: #CDCDCD;
@@ -33,14 +42,15 @@
     width: 80%;
     background-color: white;
     border-radius: 20px;
-    border-width: 3px;
-    border-color: black;
+    border: 0.1px solid gray; /* 보더 추가 */
+    box-sizing: border-box; /* 내부 크기가 보더 포함하여 계산되도록 함 */
   }
   
   .statusBar {
     height: 100%;
     border-radius: 20px;
     background: whitesmoke;
+    border: 0.1px solid gray; /* 보더 추가 */
 
     /* Old browsers */
     background: -moz-linear-gradient(top, #FFF5C0 0%, #FFF5C0 52%, #FFF5C0 100%);
