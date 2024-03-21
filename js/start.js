@@ -49,7 +49,7 @@ function resultaddImage(qIdx) {
 
   var questionImage = document.createElement('img');
 
-  var imgURL = 'img/question-' + qIdx + '.jpg';
+  var imgURL = 'img/question/question-' + qIdx + '.jpg';
   questionImage.src = imgURL;
   questionImage.alt = 'Question Image ' + qIdx;
   questionImage.classList.add('img-fluid');
@@ -80,7 +80,7 @@ function addImage(qIdx) {
 
   var questionImage = document.createElement('img');
 
-  var imgURL = 'img/question-' + qIdx + '.jpg';
+  var imgURL = 'img/question/question-' + qIdx + '.jpg';
   questionImage.src = imgURL;
   questionImage.alt = 'Question Image ' + qIdx;
   questionImage.classList.add('img-fluid');

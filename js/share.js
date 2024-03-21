@@ -1,9 +1,23 @@
-function shareMessage() {
-  Kakao.Share.sendCustom({
-    templateId: 82775,
-    templateArgs: {
-      title: '라이언이 즐겨먹던 바로 그 틴케이스 치즈볼',
-      description: '바라만 봐도 즐거워지는 힐링 패키지에는 시크릿 스토리가 숨어있어요.',
-    },
-  });
+function preloadImages(imageURLs) {
+  for (var i = 0; i < imageURLs.length; i++) {
+      var img = new Image();
+      img.src = imageURLs[i];
+  }
+}
+
+// 페이지 로드 시 이미지 프리로드 실행
+window.onload = function() {
+  var imageURLs = [
+      "img/question/question-0",
+      "img/question/question-1",
+      "img/question/question-2",
+      "img/question/question-3",
+      "img/question/question-4",
+      "img/question/question-5",
+      "img/question/question-6",
+      "img/question/question-7",
+
+      // 프리로드할 이미지의 URL을 추가합니다.
+  ];
+  preloadImages(imageURLs);
 }
