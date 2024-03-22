@@ -1,17 +1,17 @@
 #main {
     background-color: transparent;
-    width: 80%;
+    width: 100%;
     text-align: center;
-    border-radius: 20px;
     font-weight: bold;
 }
 
+
 p{
     font-size: 15px;
-    margin-top: 20px; 
+    margin-top: 30px; 
 
 }
-h1{
+h5{
     margin-bottom: 20px ;
     border-radius: 20px;
     padding: 10px;
@@ -19,16 +19,16 @@ h1{
 }
 
 #start_button {
-    margin-top: 8rem; /* 예시로 3rem 으로 설정 */
+    margin-top: 2rem;
+    background: #FFD700; 
+    color: white;/* 예시로 3rem 으로 설정 */
 }
 
-
-
-
-#main img {
-    margin-bottom: 20px; 
+#creator {
+    margin-top: 6rem;
 }
+
 #main img {
-    margin-bottom: 20px; /* 이미지 아래 간격 설정 */
-    margin-top: 20px;
+    margin-bottom: 10px; /* 이미지 아래 간격 설정 */
+    margin-top: 10px;
 }
