@@ -4,7 +4,6 @@
     text-align: center;
     border-radius: 20px;
     font-weight: bold;
-
 }
 
 p{
@@ -16,10 +15,15 @@ h1{
     margin-bottom: 20px ;
     border-radius: 20px;
     padding: 10px;
-    background: whitesmoke;
-    border: 0.1px solid gray; /* 보더 추가 */;
-    background: transparent;
+
 }
+
+#start_button {
+    margin-top: 8rem; /* 예시로 3rem 으로 설정 */
+}
+
+
+
 
 #main img {
     margin-bottom: 20px; 

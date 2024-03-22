@@ -42,7 +42,7 @@
     width: 80%;
     background-color: white;
     border-radius: 20px;
-    border: 0.1px solid gray; /* 보더 추가 */
+    border: 0.1px solid #FBEC9B; /* 보더 추가 */
     box-sizing: border-box; /* 내부 크기가 보더 포함하여 계산되도록 함 */
   }
   
@@ -50,15 +50,16 @@
     height: 100%;
     border-radius: 20px;
     background: whitesmoke;
-    border: 0.1px solid gray; /* 보더 추가 */
+    
+/* Old browsers */
+background: -moz-linear-gradient(top, #FFD700 0%, #FFD700 52%, #FFD700 100%);
+/* FF3.6-15 */
+background: -webkit-linear-gradient(top, #FFD700 0%, #FFD700 52%, #FFD700 100%);
+/* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #FFD700 0%, #FFD700 52%, #FFD700 100%);
+/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD700', endColorstr='#FFD700', GradientType=0);
+/* IE6-9 */
 
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #FFF5C0 0%, #FFF5C0 52%, #FFF5C0 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #FFF5C0 0%, #FFF5C0 52%, #FFF5C0 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #FFF5C0 0%, #FFF5C0 52%, #FFF5C0 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=0);
-    /* IE6-9 */
+
   }
