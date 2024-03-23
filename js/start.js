@@ -25,23 +25,79 @@ function calResult(){
   return result;
 }
 //결과창
-function setResult(){
+function setResult() {
   let point = calResult();
   const resultName = document.querySelector('.resultname');
-  resultName.innerHTML = infoList[point].name;
-
-  var resultImg = document.createElement('img');
+  resultName.innerHTML = infoList[point].name || ''; // 대체 텍스트 또는 공백
+  
   const imgDiv = document.querySelector('#resultImg');
-  var imgURL = 'img/result/image-' + point + '.jpg';
-  resultImg.src = imgURL;
-  resultImg.alt = point;
-  resultImg.classList.add('img-fluid');
-  imgDiv.appendChild(resultImg);
+  const clubImgDiv = document.querySelector('.club_img'); // 동아리 이미지를 추가할 div 선택
+  const imgURL = 'img/result/image-' + point + '.jpg';
+  
+  // 이미지가 로드되지 않았을 때 숨기는 함수
+  function hideIfImageNotFound(imgElement) {
+    imgElement.onerror = function() {
+      this.style.display = 'none';
+    };
+  }
+
+  // 결과 이미지 생성 및 추가
+  if (imgURL) {
+    var resultImg = document.createElement('img');
+    resultImg.src = imgURL;
+    resultImg.alt = '';
+    resultImg.classList.add('img-fluid');
+    hideIfImageNotFound(resultImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
+    imgDiv.appendChild(resultImg);
+  }
+  
+  // 동아리 이미지 경로 배열
+  const clubImgURLs = [
+    [
+      'img/club_img/club-' + point + '-1.png',
+      'img/club_img/club-' + point + '-2.png',
+      'img/club_img/club-' + point + '-3.png',
+      'img/club_img/club-' + point + '-4.png',
+      'img/club_img/club-' + point + '-5.png',
+      'img/club_img/club-' + point + '-6.png',
+      'img/club_img/club-' + point + '-7.png'
+
+    ]
+    
+    // 이하 추가 이미지 경로 배열
+  ];
+  
+  // 각 이미지 경로를 가져와서 이미지 생성 및 추가
+  for (let i = 0; i < clubImgURLs.length; i++) {
+    for (let j = 0; j < clubImgURLs[i].length; j++) {
+      var clubButton = document.createElement('button'); // 버튼 요소 생성
+      clubButton.classList.add('btn'); // 버튼 스타일 적용을 위한 클래스 추가
+  
+      // 이미지 생성 및 추가
+      var clubImg = document.createElement('img');
+      clubImg.src = clubImgURLs[i][j];
+      clubImg.classList.add('img-fluid'); // 이미지 스타일 적용을 위한 클래스 추가
+      clubImg.classList.add('rounded-circle'); // 동그랗게 자르는 클래스 추가
+      clubImg.style.width = '50px'; // 이미지의 너비 설정
+      clubImg.style.height = '50px'; // 이미지의 높이 설정
+      clubButton.appendChild(clubImg); // 버튼에 이미지 요소 추가
+  
+      // 버튼에 텍스트 추가
+      var buttonText = document.createTextNode('Button Text');
+      clubButton.appendChild(buttonText);
+  
+      clubButton.style.float = 'left'; // 왼쪽 정렬 설정
+      clubButton.style.marginRight = '10px'; // 이미지와 텍스트 간격 조절
+      hideIfImageNotFound(clubImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
+      clubImgDiv.appendChild(clubButton); // 동아리 이미지를 추가할 div에 버튼 요소 추가
+    }
+  }
   
 
   const resultDesc = document.querySelector('.resultDesc');
   resultDesc.innerHTML = infoList[point].desc;
 }
+
 
 function resultaddImage(qIdx) {
   var b = document.querySelector('#');
