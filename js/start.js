@@ -70,28 +70,26 @@ function setResult() {
   // 각 이미지 경로를 가져와서 이미지 생성 및 추가
   for (let i = 0; i < clubImgURLs.length; i++) {
     for (let j = 0; j < clubImgURLs[i].length; j++) {
-      var clubButton = document.createElement('button'); // 버튼 요소 생성
-      clubButton.classList.add('btn'); // 버튼 스타일 적용을 위한 클래스 추가
-  
-      // 이미지 생성 및 추가
-      var clubImg = document.createElement('img');
-      clubImg.src = clubImgURLs[i][j];
-      clubImg.classList.add('img-fluid'); // 이미지 스타일 적용을 위한 클래스 추가
-      clubImg.classList.add('rounded-circle'); // 동그랗게 자르는 클래스 추가
-      clubImg.style.width = '50px'; // 이미지의 너비 설정
-      clubImg.style.height = '50px'; // 이미지의 높이 설정
-      clubButton.appendChild(clubImg); // 버튼에 이미지 요소 추가
-  
-      // 버튼에 텍스트 추가
-      var buttonText = document.createTextNode('Button Text');
-      clubButton.appendChild(buttonText);
-  
-      clubButton.style.float = 'left'; // 왼쪽 정렬 설정
-      clubButton.style.marginRight = '10px'; // 이미지와 텍스트 간격 조절
-      hideIfImageNotFound(clubImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
-      clubImgDiv.appendChild(clubButton); // 동아리 이미지를 추가할 div에 버튼 요소 추가
+        var clubDiv = document.createElement('div'); // 이미지를 감싸는 div 생성
+        clubDiv.classList.add('image-wrapper'); // 스타일을 적용할 클래스 추가
+
+        var clubImg = document.createElement('img');
+        clubImg.src = clubImgURLs[i][j];
+        clubImg.classList.add('img-fluid');
+        clubImg.classList.add('rounded-circle');
+        clubImg.style.width = '50px';
+        clubImg.style.height = '50px';
+
+        clubDiv.appendChild(clubImg); // 이미지를 div에 추가
+
+        clubDiv.style.clear = 'both'; // 각 div를 새로운 줄에 배치
+        clubDiv.style.float = 'left'; // 왼쪽 정렬 설정
+        clubDiv.style.marginRight = '10px'; // 이미지 간격 조절
+        hideIfImageNotFound(clubImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
+        clubImgDiv.appendChild(clubDiv); // 동아리 이미지를 추가할 div에 div 요소 추가
     }
-  }
+}
+
   
 
   const resultDesc = document.querySelector('.resultDesc');
@@ -152,7 +150,7 @@ function addAnswer(answerText, qIdx, idx){
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
   answer.classList.add('answerList');
-  answer.classList.add('my-4');
+  answer.classList.add('my-3');
   answer.classList.add('py-3');
   answer.classList.add('mx-auto');
   answer.classList.add('fadeIn');

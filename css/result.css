@@ -8,6 +8,7 @@
 }
 
 .resultDesc{
+    padding-bottom: 20px;
     font-size: 18px;
 }
 
@@ -15,14 +16,7 @@
     font-size: 20px;
 }
 
-.kakao{
-    color: white;
-    background-color: #FEE500;
-    font-size: 20px;
-    border :0px;
-    border-radius: 20px;
-}
 
-.kakao:hover, .kakao:focus{
-    background-color: whitesmoke;
+.restart{
+    clear: both;
 }
