@@ -33,7 +33,11 @@
     width: 100%;
     justify-content: flex-start; /* 가로 왼쪽 정렬 */
     background: transparent;
-    border-radius: 20px;
+    border-top: none; /* 위쪽 border 제거 */
+    border-left: none; /* 왼쪽 border 제거 */
+    border-right: none; /* 오른쪽 border 제거 */
+    border-bottom: 2px solid white; /* 아래쪽에만 2픽셀 두께의 빨간색 선을 적용 */
+
 
 }
 
@@ -41,6 +45,9 @@
     flex: 1; /* 나머지 영역을 차지하도록 설정 */
     text-align: center; /* 텍스트 가운데 정렬 */
     margin-top: 10px;
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 
