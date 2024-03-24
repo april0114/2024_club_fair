@@ -120,26 +120,109 @@ const infoList = [
             'img/club_img/club-0-3.png',
             'img/club_img/club-0-4.png',
         ],
-        urls: ["https://www.naver.com/","https://www.figma.com/file/2KLA2b2B8Z0VLnB44v3Oah/Untitled?type=design&node-id=0-1&mode=design&t=JHaZKYDdCK5Qsesu-0"] 
+        urls: [
+        "https://www.instagram.com/sku_workers/",
+        "https://www.instagram.com/gramy._.official/",
+        "https://www.instagram.com/udream.sku/",
+        "https://www.instagram.com/sdr.official_/"
+        ] 
             
     },
     {
         name:'전시 창작과',
-        desc:' 전시창작분과 동아리 알아보기!'
+        desc:' 전시창작분과 동아리 알아보기!',
+        club_name : [ '애니문','난반사', '스케쳐'],
+        images: [
+            'img/club_img/club-1-1.png',
+            'img/club_img/default.png',
+            'img/club_img/club-1-3.png',
+        ],
+        urls: [
+            " ",
+            " ",
+            "https://www.instagram.com/skatcher_official/"
+        ]
+
     },
     {
         name:'교양 분과',
-        desc:' 교양분과 동아리 알아보기!'
+        desc:' 교양분과 동아리 알아보기!',
+        club_name : [ '공백','크레디트'],
+        images: [
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+        ],
+        urls: [
+            " ",
+            " ",
+        ]
     },
     {
         name:'체육 분과',
-        desc:' 체육분과 동아리 알아보기!'
+        desc:' 체육분과 동아리 알아보기!',
+        club_name : [ '서경콕','버디버디', '생무림', 'FC라플', '적시타', 'SKU-BA', '핀쓰리', 'SST', '디펜스', '두다지', 'OZ'],
+        images: [
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+            'img/club_img/club-3-5.png',
+            'img/club_img/default.png',
+            'img/club_img/club-3-7.png',
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+            'img/club_img/club-3-11.png',
+
+
+        ],
+        urls: [
+            " ",
+            " ",
+            " ",
+            " ",
+            "https://www.instagram.com/juksita_2024/",
+            " ",
+            "https://www.instagram.com/sku_pinthree_24/ ",
+            " ",
+            " ",
+            " ",
+            "https://www.instagram.com/oz_sku/"
+        ]
     },
     {
         name:'종교 분과',
-        desc:' 종교분과 동아리 알아보기!'
+        desc:' 종교분과 동아리 알아보기!',
+        club_name : [ 'IVF','CCC', 'UBF'],
+        images: [
+            'img/club_img/club-4-1.png',
+            'img/club_img/club-4-2.png',
+            'img/club_img/club-4-3.png'
+        ],
+        urls: [
+            "https://www.instagram.com/sku_ivf/",
+            "https://www.instagram.com/sku_ccc/",
+            "https://www.instagram.com/sk_ubf/"
+        ]
     },{
         name:'학술 분과',
-        desc:' 학술분과 동아리 알아보기!'
+        desc:' 학술분과 동아리 알아보기!',
+        club_name : [ '멋쟁이사자처럼','연지', '불스', '민형사', 'DCT', '브랜딩클럽'],
+        images: [
+            'img/club_img/club-5-1.png',
+            'img/club_img/club-5-2.png',
+            'img/club_img/club-5-3.png',
+            'img/club_img/default.png',
+            'img/club_img/default.png',
+            'img/club_img/club-5-6.png',
+        ],
+        urls: [
+            "https://www.instagram.com/likelion_skuniv/",
+            "https://www.instagram.com/sku_yeonji/",
+            "https://www.instagram.com/sku_bulls/",
+            " ",
+            " ",
+            "https://www.instagram.com/brandingclub_official/"
+        ]
     },
 ]
