@@ -113,7 +113,7 @@ const infoList = [
     {
         name:'공연 예술 분과',
         desc:' 공연예술분과 동아리 알아보기!',
-        club_name : ['워커스', '그라미', 'udream', 'sdr'],
+        club_name : ['Workers', '그라미', 'Udream', 'SDR'],
         images: [
             'img/club_img/club-0-1.png',
             'img/club_img/club-0-2.png',
@@ -182,7 +182,8 @@ const infoList = [
             " ",
             " ",
             "https://www.instagram.com/juksita_2024/",
-            " ",
+            
+             
             "https://www.instagram.com/sku_pinthree_24/ ",
             " ",
             " ",
