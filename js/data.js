@@ -213,7 +213,7 @@ const infoList = [
             'img/club_img/club-5-1.png',
             'img/club_img/club-5-2.png',
             'img/club_img/club-5-3.png',
-            'img/club_img/default.png',
+            'img/club_img/club-5-4.png',
             'img/club_img/default.png',
             'img/club_img/club-5-6.png',
         ],
@@ -221,7 +221,7 @@ const infoList = [
             "https://www.instagram.com/likelion_skuniv/",
             "https://www.instagram.com/sku_yeonji/",
             "https://www.instagram.com/sku_bulls/",
-            " ",
+            "https://www.instagram.com/sku.cclrs/",
             " ",
             "https://www.instagram.com/brandingclub_official/"
         ]
