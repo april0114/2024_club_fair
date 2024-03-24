@@ -63,39 +63,45 @@ function setResult() {
   // 이미지 설명 가져오기
   const resultDesc = infoList[point].desc;
 
-  // 각 이미지 경로를 가져와서 이미지 생성 및 추가
+  // 각 이미지 경로를 가져와서 이미지 및 동아리 이름 생성 및 추가
   for (let i = 0; i < clubImgURLs.length; i++) {
-    var clubDiv = document.createElement('div'); 
-    clubDiv.classList.add('image-wrapper'); // 스타일을 적용할 클래스 추가
-  
+    // 버튼 생성
+    var button = document.createElement('button');
+    button.classList.add('club-button');
+
+    // 버튼에 이미지 추가
     var clubImg = document.createElement('img');
     clubImg.src = clubImgURLs[i];
     clubImg.classList.add('img-fluid');
     clubImg.classList.add('rounded-circle');
     clubImg.style.width = '50px';
     clubImg.style.height = '50px';
-  
-    clubDiv.appendChild(clubImg); 
-    
-    clubDiv.style.clear = 'both'; 
-    clubDiv.style.float = 'left'; 
-    clubDiv.style.marginRight = '10px'; 
-    hideIfImageNotFound(clubImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
-    clubImgDiv.appendChild(clubDiv); // 동아리 이미지를 추가할 div에 div 요소 추가
-  }
-  
-  // 동아리 이름 추가
-  const clubNames = infoList[point].club_name;
-  clubNames.forEach(name => {
-    const clubNameElement = document.createElement('p');
-    clubNameElement.textContent = name;
-    resultclub_name.appendChild(clubNameElement);
+    button.appendChild(clubImg);
+    button.addEventListener('click', function() {
+      // 각 이미지에 대응하는 URL로 페이지를 이동
+      window.location.href = infoList[point].urls[i];
   });
+    // 버튼에 텍스트 추가
+    var clubNameElement = document.createElement('span');
+    clubNameElement.textContent = infoList[point].club_name[i];
+    button.appendChild(clubNameElement);
+
+    // 버튼에 이벤트 리스너 추가
+    button.addEventListener('click', function() {
+        // 버튼이 클릭되었을 때 실행할 동작 정의
+        // 예: 버튼이 클릭되면 해당 동아리에 대한 정보를 표시하거나 다른 동작을 수행
+    });
+
+    // 버튼을 동아리 이미지를 추가할 div에 추가
+    clubImgDiv.appendChild(button);
+}
+
   
   // 이미지 설명 추가
   const resultDescElement = document.querySelector('.resultDesc');
   resultDescElement.innerHTML = resultDesc;
 }
+
 
 //질문지에 이미지 추가하가
 function resultaddImage(qIdx) {

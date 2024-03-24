@@ -119,7 +119,8 @@ const infoList = [
             'img/club_img/club-0-2.png',
             'img/club_img/club-0-3.png',
             'img/club_img/club-0-4.png',
-        ]
+        ],
+        urls: ["https://www.naver.com/","https://www.figma.com/file/2KLA2b2B8Z0VLnB44v3Oah/Untitled?type=design&node-id=0-1&mode=design&t=JHaZKYDdCK5Qsesu-0"] 
             
     },
     {
