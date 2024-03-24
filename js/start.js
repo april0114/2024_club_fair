@@ -34,6 +34,9 @@ function setResult() {
   const clubImgDiv = document.querySelector('.club_img'); // 동아리 이미지를 추가할 div 선택
   const imgURL = 'img/result/image-' + point + '.jpg';
   
+  const resultclub_name = document.querySelector('#club_name');
+  resultclub_name.innerHTML = ''; // 기존 내용 비우기
+
   // 이미지가 로드되지 않았을 때 숨기는 함수
   function hideIfImageNotFound(imgElement) {
     imgElement.onerror = function() {
@@ -51,64 +54,58 @@ function setResult() {
     imgDiv.appendChild(resultImg);
   }
   
-  // 동아리 이미지 경로 배열
-  const clubImgURLs = [
-    [
-      'img/club_img/club-' + point + '-1.png',
-      'img/club_img/club-' + point + '-2.png',
-      'img/club_img/club-' + point + '-3.png',
-      'img/club_img/club-' + point + '-4.png',
-      'img/club_img/club-' + point + '-5.png',
-      'img/club_img/club-' + point + '-6.png',
-      'img/club_img/club-' + point + '-7.png'
-
-    ]
-    
-    // 이하 추가 이미지 경로 배열
-  ];
+  // 이전 이미지를 비우기
+  clubImgDiv.innerHTML = '';
   
+  // 동아리 이미지 URL 배열 가져오기
+  const clubImgURLs = infoList[point].images; // 이미지 배열 가져오기
+  
+  // 이미지 설명 가져오기
+  const resultDesc = infoList[point].desc;
+
   // 각 이미지 경로를 가져와서 이미지 생성 및 추가
   for (let i = 0; i < clubImgURLs.length; i++) {
-    for (let j = 0; j < clubImgURLs[i].length; j++) {
-        var clubDiv = document.createElement('div'); // 이미지를 감싸는 div 생성
-        clubDiv.classList.add('image-wrapper'); // 스타일을 적용할 클래스 추가
-
-        var clubImg = document.createElement('img');
-        clubImg.src = clubImgURLs[i][j];
-        clubImg.classList.add('img-fluid');
-        clubImg.classList.add('rounded-circle');
-        clubImg.style.width = '50px';
-        clubImg.style.height = '50px';
-
-        clubDiv.appendChild(clubImg); // 이미지를 div에 추가
-
-        clubDiv.style.clear = 'both'; // 각 div를 새로운 줄에 배치
-        clubDiv.style.float = 'left'; // 왼쪽 정렬 설정
-        clubDiv.style.marginRight = '10px'; // 이미지 간격 조절
-        hideIfImageNotFound(clubImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
-        clubImgDiv.appendChild(clubDiv); // 동아리 이미지를 추가할 div에 div 요소 추가
-    }
-}
-
+    var clubDiv = document.createElement('div'); 
+    clubDiv.classList.add('image-wrapper'); // 스타일을 적용할 클래스 추가
   
-
-  const resultDesc = document.querySelector('.resultDesc');
-  resultDesc.innerHTML = infoList[point].desc;
+    var clubImg = document.createElement('img');
+    clubImg.src = clubImgURLs[i];
+    clubImg.classList.add('img-fluid');
+    clubImg.classList.add('rounded-circle');
+    clubImg.style.width = '50px';
+    clubImg.style.height = '50px';
+  
+    clubDiv.appendChild(clubImg); 
+    
+    clubDiv.style.clear = 'both'; 
+    clubDiv.style.float = 'left'; 
+    clubDiv.style.marginRight = '10px'; 
+    hideIfImageNotFound(clubImg); // 이미지가 로드되지 않았을 때 숨기는 함수 호출
+    clubImgDiv.appendChild(clubDiv); // 동아리 이미지를 추가할 div에 div 요소 추가
+  }
+  
+  // 동아리 이름 추가
+  const clubNames = infoList[point].club_name;
+  clubNames.forEach(name => {
+    const clubNameElement = document.createElement('p');
+    clubNameElement.textContent = name;
+    resultclub_name.appendChild(clubNameElement);
+  });
+  
+  // 이미지 설명 추가
+  const resultDescElement = document.querySelector('.resultDesc');
+  resultDescElement.innerHTML = resultDesc;
 }
 
-
+//질문지에 이미지 추가하가
 function resultaddImage(qIdx) {
   var b = document.querySelector('#');
   b.innerHTML = ''; // 이미지를 초기화
-
   var questionImage = document.createElement('img');
-
   var imgURL = 'img/question/question-' + qIdx + '.jpg';
   questionImage.src = imgURL;
   questionImage.alt = 'Question Image ' + qIdx;
   questionImage.classList.add('img-fluid');
-
-
   b.appendChild(questionImage);
 }
 
