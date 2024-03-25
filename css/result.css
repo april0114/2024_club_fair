@@ -66,6 +66,7 @@
     background-color: #FFF5C0;
     border-radius: 80px 80px 80px 80px; /* 오른쪽 상단, 왼쪽 상단에만 둥근 모서리 적용 */
     z-index: -1;
+    padding-top: 5%;
 }
 
 
