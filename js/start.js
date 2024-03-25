@@ -69,32 +69,39 @@ function setResult() {
     var button = document.createElement('button');
     button.classList.add('club-button');
 
-    // 버튼에 이미지 추가
+    // 이미지를 감싸는 원을 생성하는 div 요소
+    var clubImgWrapper = document.createElement('div');
+    clubImgWrapper.classList.add('rounded-circle-wrapper');
+
+    // 이미지 생성
     var clubImg = document.createElement('img');
     clubImg.src = clubImgURLs[i];
     clubImg.classList.add('img-fluid');
     clubImg.classList.add('rounded-circle');
     clubImg.style.width = '50px';
     clubImg.style.height = '50px';
-    button.appendChild(clubImg);
-    button.addEventListener('click', function() {
-      // 각 이미지에 대응하는 URL로 페이지를 이동
-      window.location.href = infoList[point].urls[i];
-  });
+
+    // 이미지를 원을 감싸는 div에 추가
+    clubImgWrapper.appendChild(clubImg);
+
+    // 원을 감싸는 div를 버튼에 추가
+    button.appendChild(clubImgWrapper);
+
     // 버튼에 텍스트 추가
     var clubNameElement = document.createElement('span');
     clubNameElement.textContent = infoList[point].club_name[i];
     button.appendChild(clubNameElement);
 
-    // 버튼에 이벤트 리스너 추가
+    // 이미지 버튼에 클릭 이벤트 리스너 추가
     button.addEventListener('click', function() {
-        // 버튼이 클릭되었을 때 실행할 동작 정의
-        // 예: 버튼이 클릭되면 해당 동아리에 대한 정보를 표시하거나 다른 동작을 수행
+        // 클릭된 이미지에 대응하는 URL로 페이지를 이동
+        window.location.href = infoList[point].urls[i];
     });
 
-    // 버튼을 동아리 이미지를 추가할 div에 추가
+    // 동아리 이미지를 추가할 div에 버튼 추가
     clubImgDiv.appendChild(button);
 }
+
 
   
   // 이미지 설명 추가
@@ -245,3 +252,20 @@ restartButton.addEventListener('click', function() {
 function restartPage() {
   window.location.reload(); // 페이지 새로고침하여 다시 시작
 }
+
+//스크롤
+// window.addEventListener('load', function() {
+//   var clubImg = document.querySelector('.club_img');
+//   var background = document.querySelector('.background');
+
+//   // club_img 요소의 시작 위치를 계산하기 위해 getBoundingClientRect() 함수 사용
+//   var clubImgRect = clubImg.getBoundingClientRect();
+//   var clubImgTop = clubImgRect.top;
+
+//   // club_img 요소의 높이를 계산하여 background 요소의 높이로 설정
+//   var clubImgHeight = clubImg.offsetHeight;
+//   background.style.height = clubImgHeight + 'px';
+
+//   // background 요소의 시작 위치를 club_img 요소의 시작 위치로 설정
+//   background.style.top = clubImgTop + 'px';
+// });
