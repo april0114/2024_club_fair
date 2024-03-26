@@ -14,8 +14,13 @@
     font-size: 18px;
 }
 
+
 .resultname{
     font-size: 20px;
+}
+
+#creator span, #creator_ha span {
+    font-size: 15px;
 }
 
 
